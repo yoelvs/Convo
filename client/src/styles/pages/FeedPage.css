@@ -1,0 +1,116 @@
+/* Light Mode CSS Variables */
+:root {
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  
+  --blue-50: #eff6ff;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  
+  --yellow-400: #facc15;
+}
+
+/* Dark Mode CSS Variables */
+.dark-mode {
+  --white: #1f2937;
+  --gray-50: #111827;
+  --gray-100: #1f2937;
+  --gray-200: #374151;
+  --gray-300: #4b5563;
+  --gray-400: #6b7280;
+  --gray-500: #9ca3af;
+  --gray-600: #d1d5db;
+  --gray-700: #e5e7eb;
+  --gray-800: #f9fafb;
+  
+  --blue-50: #1e3a5f;
+  --blue-500: #60a5fa;
+  --blue-600: #3b82f6;
+  --blue-700: #2563eb;
+  
+  --green-500: #4ade80;
+  --green-600: #22c55e;
+  
+  --red-500: #f87171;
+  --red-600: #ef4444;
+  
+  --yellow-400: #facc15;
+}
+
+.feed-page {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  background-color: var(--gray-50);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feed-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.feed-container h1 {
+  margin-bottom: 2rem;
+  color: var(--gray-800);
+  transition: color 0.3s ease;
+}
+
+.posts-list {
+  margin-top: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gray-500);
+  transition: color 0.3s ease;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 2rem;
+  background-color: var(--blue-500);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.load-more-btn:hover {
+  background-color: var(--blue-600);
+}
+
+@media (max-width: 768px) {
+  .feed-page {
+    padding-bottom: 1rem;
+  }
+  
+  .feed-container {
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .feed-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+

@@ -1,0 +1,364 @@
+/* Import CSS variables from ChatPage */
+@import '../../styles/pages/ChatPage.css';
+
+/* Top Navigation Bar */
+.top-bar {
+  height: 64px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--blue-500);
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue-500);
+  margin: 0;
+}
+
+.welcome-text {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-left: 8px;
+}
+
+/* Top Bar Right */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.more-options {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  color: var(--gray-400);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.more-options:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--gray-600);
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  color: var(--blue-500);
+}
+
+.nav-btn.active {
+  background-color: var(--blue-500);
+  color: white;
+}
+
+.nav-btn.active:hover {
+  background-color: var(--blue-600);
+}
+
+.nav-btn.primary {
+  background-color: var(--blue-500);
+  color: white;
+  position: relative;
+}
+
+.nav-btn.primary:hover {
+  background-color: var(--blue-600);
+}
+
+.nav-btn.primary.active {
+  background-color: var(--blue-600);
+}
+
+.nav-btn.logout {
+  background-color: var(--red-500);
+  color: white;
+}
+
+.nav-btn.logout:hover {
+  background-color: var(--red-600);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--red-500);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar Options Wrapper */
+.navbar-options-wrapper {
+  position: relative;
+}
+
+.navbar-options-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.navbar-option-item {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--gray-800);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-option-item:hover {
+  background-color: var(--gray-50);
+}
+
+/* Dark mode support */
+.dark-mode .navbar-options-menu {
+  background-color: var(--gray-100);
+  border-color: var(--gray-300);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .navbar-option-item {
+  color: var(--gray-600);
+}
+
+.dark-mode .navbar-option-item:hover {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+}
+
+/* Tips Popup Styles */
+.navbar-tips-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.navbar-tips-popup {
+  position: relative;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+  max-width: 500px;
+  max-height: 80vh;
+  z-index: 10000;
+  animation: slideDown 0.2s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+
+.tips-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.tips-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 4px;
+}
+
+.tips-close-btn:hover {
+  color: #333;
+  background-color: var(--gray-100);
+}
+
+.tips-content {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.tip-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-600);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.tip-item:last-child {
+  border-bottom: none;
+}
+
+.tip-item strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.shortcuts-list {
+  margin: 0.5rem 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.shortcuts-list li {
+  margin: 0.5rem 0;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.shortcuts-list kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.85rem;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-right: 4px;
+}
+
+/* Dark mode support for Tips popup */
+.dark-mode .navbar-tips-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .navbar-tips-popup {
+  background: var(--gray-800);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .tips-header {
+  border-bottom-color: var(--gray-700);
+}
+
+.dark-mode .tips-header h3 {
+  color: var(--gray-200);
+}
+
+.dark-mode .tips-close-btn {
+  color: var(--gray-400);
+}
+
+.dark-mode .tips-close-btn:hover {
+  color: var(--gray-200);
+  background-color: var(--gray-700);
+}
+
+.dark-mode .tip-item {
+  border-bottom-color: var(--gray-700);
+  color: var(--gray-400);
+}
+
+.dark-mode .tip-item strong {
+  color: var(--gray-200);
+}
+
+.dark-mode .shortcuts-list li {
+  color: var(--gray-400);
+}
+
+.dark-mode .shortcuts-list kbd {
+  background-color: var(--gray-700);
+  border-color: var(--gray-600);
+  color: var(--gray-200);
+}

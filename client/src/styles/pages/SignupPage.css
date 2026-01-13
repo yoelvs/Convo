@@ -1,0 +1,459 @@
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  transition: background 0.3s ease;
+}
+
+.dark-mode .signup-page {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.signup-container {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .signup-container {
+  background: var(--gray-100);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container h1 {
+  text-align: center;
+  margin-bottom: 0.25rem;
+  color: var(--gray-800);
+  transition: color 0.3s ease;
+}
+
+.dark-mode .signup-container h1 {
+  color: var(--gray-700);
+}
+
+.signup-container .subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dark-mode .signup-container .subtitle {
+  color: var(--gray-400);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--gray-600);
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .signup-container h2 {
+  color: var(--gray-400);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--gray-800);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .form-group label {
+  color: var(--gray-700);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--white);
+  color: var(--gray-800);
+}
+
+.dark-mode .form-group input {
+  background-color: var(--gray-200);
+  border-color: var(--gray-300);
+  color: var(--gray-700);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--blue-500);
+}
+
+.dark-mode .form-group input:focus {
+  border-color: var(--blue-500);
+}
+
+.error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--red-600);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .error-message {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--red-500);
+}
+
+.signup-container button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--blue-500);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-container button:hover:not(:disabled) {
+  background-color: var(--blue-600);
+}
+
+.signup-container button:disabled {
+  background-color: var(--gray-300);
+  cursor: not-allowed;
+  color: var(--gray-500);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .login-link {
+  color: var(--gray-400);
+}
+
+.login-link a {
+  color: var(--blue-500);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .login-link a {
+  color: var(--blue-500);
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.home-link {
+  color: var(--blue-500);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .home-link {
+  color: var(--blue-500);
+}
+
+.avatar-upload {
+  margin-top: 0.5rem;
+}
+
+.avatar-upload-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.avatar-upload-label:hover {
+  background-color: var(--gray-200);
+}
+
+.avatar-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-preview img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gray-200);
+}
+
+.remove-avatar {
+  padding: 0.5rem 1rem;
+  background-color: var(--red-500);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.remove-avatar:hover {
+  background-color: var(--red-600);
+}
+
+.terms-checkbox-label {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: normal !important;
+}
+
+.terms-checkbox-label input[type="checkbox"] {
+  width: auto !important;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+
+.terms-link-btn {
+  background: none;
+  border: none;
+  color: var(--blue-500);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.terms-link-btn:hover {
+  color: var(--blue-600);
+}
+
+.terms-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.terms-modal {
+  background: var(--white);
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .terms-modal {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.terms-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.dark-mode .terms-modal-header {
+  border-bottom-color: var(--gray-300);
+}
+
+.terms-modal-header h2 {
+  margin: 0;
+  color: var(--gray-800);
+}
+
+.dark-mode .terms-modal-header h2 {
+  color: var(--gray-700);
+}
+
+.terms-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--gray-600);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.terms-modal-close:hover {
+  color: var(--gray-800);
+}
+
+.dark-mode .terms-modal-close {
+  color: var(--gray-400);
+}
+
+.dark-mode .terms-modal-close:hover {
+  color: var(--gray-700);
+}
+
+.terms-modal-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.terms-summary h3 {
+  margin-top: 0;
+  color: var(--blue-600);
+  margin-bottom: 1rem;
+}
+
+.dark-mode .terms-summary h3 {
+  color: var(--blue-500);
+}
+
+.terms-summary ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.terms-summary li {
+  margin-bottom: 0.5rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.dark-mode .terms-summary li {
+  color: var(--gray-500);
+}
+
+.terms-full-link {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.dark-mode .terms-full-link {
+  border-top-color: var(--gray-300);
+}
+
+.terms-full-link a {
+  color: var(--blue-600);
+  text-decoration: none;
+}
+
+.terms-full-link a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .terms-full-link a {
+  color: var(--blue-500);
+}
+
+.terms-modal-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.dark-mode .terms-modal-footer {
+  border-top-color: var(--gray-300);
+}
+
+.terms-decline-btn,
+.terms-accept-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.terms-decline-btn {
+  background-color: var(--gray-50);
+  color: var(--gray-800);
+}
+
+.terms-decline-btn:hover {
+  background-color: var(--gray-200);
+}
+
+.dark-mode .terms-decline-btn {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.dark-mode .terms-decline-btn:hover {
+  background-color: var(--gray-300);
+}
+
+.terms-accept-btn {
+  background-color: var(--blue-500);
+  color: var(--white);
+}
+
+.terms-accept-btn:hover {
+  background-color: var(--blue-600);
+}
+
+.dark-mode .terms-accept-btn {
+  background-color: var(--blue-500);
+  color: var(--gray-800);
+}
+
+.dark-mode .terms-accept-btn:hover {
+  background-color: var(--blue-600);
+}
+
+@media (max-width: 767px) {
+  .terms-modal {
+    max-height: 90vh;
+  }
+
+  .terms-modal-header,
+  .terms-modal-content,
+  .terms-modal-footer {
+    padding: 1rem;
+  }
+}
